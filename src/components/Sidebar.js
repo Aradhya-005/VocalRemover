@@ -43,16 +43,39 @@ export const Sidebar = () => {
   return (
     <nav className={classes.navbar}>
       <div className={classes.navbarMain}>
-        <ScrollArea
-       
-          w={100}
-          h={400}
-          type="always"
-          offsetScrollbar
-          scrollbarSize={8} // Use Mantine's prop to control scrollbar size
-        >
-          <Box w={100}>{links}</Box>
-        </ScrollArea>
+      <Box
+  w={100}
+  h={430}
+  style={{
+    overflowY: 'scroll', // Enable vertical scrolling
+    scrollbarWidth: 'thin', // For Firefox browsers (thin scrollbar)
+    scrollbarColor: ' #665DC3 #1c1c26', // Firefox (thumb color, track color)
+  }}
+>
+  <style jsx>{`
+    div::-webkit-scrollbar {
+      width: 10px; 
+    }
+
+    div::-webkit-scrollbar-track {
+      background: #665DC3; 
+    }
+
+    div::-webkit-scrollbar-thumb {
+      background-color: #665DC3; /* Scrollbar thumb color */
+      border-radius: 10px; /* Rounded scrollbar thumb */
+      border: 2px solid #1c1c26; /* Padding around scrollbar thumb */
+    }
+
+    div::-webkit-scrollbar-thumb:hover {
+      background-color: #aaa; /* Thumb hover color */
+    }
+  `}</style>
+
+  {/* Your content inside the scrolling box */}
+  {links} {/* Your links array */}
+</Box>
+
       </div>
 
       <div className={classes.footer}>

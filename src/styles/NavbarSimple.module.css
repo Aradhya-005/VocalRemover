@@ -26,7 +26,7 @@
   text-decoration: none;
   font-size: var(--mantine-font-size-md);
   color: rgb(121, 121, 121); /* Light shade of gray for the icons */
-  padding: var(--mantine-spacing-lg) var(--mantine-spacing-lg);
+  padding: 23px 0px;
   font-weight: 500;
   background-color: #1c1c26; /* Set background color for each link */
   transition: background-color 0.3s ease; /* Smooth transition for background color */
@@ -42,8 +42,8 @@
 
 .linkIcon {
   color: rgb(121, 121, 121); /* Light shade of gray for the icons */
-  width: rem(25px);
-  height: rem(25px);
+  width: 26px;
+  height: 26px;
 }
 
 .link[data-active] {
