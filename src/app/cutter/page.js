@@ -13,14 +13,23 @@ import {
 
 function page() {
   return (
-    <Container size="xl"  width="100%"  style={{
+    <Container
+      size="xl"
+      width="100%"
+      style={{
         textAlign: "center",
         padding: "2rem",
-        backgroundColor: "#1c1c26", // Set the background color to black
+        backgroundColor: "#1c1c26", // Set the background color to dark gray
         color: "white", // Ensure text color is white
-      }} >
+      }}
+    >
       <Container style={{ textAlign: "center", padding: "2rem" }}>
-        <Group mt="md" spacing="lg" position="center" style={{ textAlign: "center", padding: "2rem" }}>
+        <Group
+          mt="md"
+          spacing="lg"
+          position="center"
+          style={{ textAlign: "center", padding: "2rem" }}
+        >
           <Anchor href="#how-it-works" color="white" weight={500}>
             How it Works
           </Anchor>
@@ -43,12 +52,12 @@ function page() {
 
       <Text mt="md">
         This app can be used to trim and/or cut audio tracks, remove audio
-        fragments. Fade in and fade out your music easily to make the audio
+        fragments, and fade in and fade out your music easily to make the audio
         harmoniously.
       </Text>
 
       <Text mt="md">
-        It’s fast and easy to use. You can save the audio file in any format
+        It is fast and easy to use. You can save the audio file in any format
         (codec parameters are configured).
       </Text>
 

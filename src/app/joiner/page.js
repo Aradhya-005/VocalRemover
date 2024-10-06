@@ -12,7 +12,7 @@ function page() {
       <Divider my="md" />
 
       <Text mt="md">
-        This app can be used to join multiple audio tracks into a single file. Simply upload the audio files you want to merge, and we’ll handle the rest.
+        This app can be used to join multiple audio tracks into a single file. Simply upload the audio files you want to merge, and we will handle the rest.
       </Text>
 
       <Text mt="md">
@@ -20,7 +20,7 @@ function page() {
       </Text>
 
       <Text mt="md">
-        It works directly in the browser; no need to install any software, and it's available for mobile devices.
+        It works directly in the browser, no need to install any software, and it is available for mobile devices.
       </Text>
 
       <Text mt="md" weight={500}>
