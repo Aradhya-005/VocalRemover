@@ -28,18 +28,23 @@ const Home = () => {
   const handleFileChange = (event) => {
     // Check if event and event.target are defined
     if (event && event.target && event.target.files) {
-        const file = event.target.files[0];
-        if (file) {
-            const validTypes = ["audio/mp3", "audio/wav", "audio/ogg", "audio/mpeg"]; // Add valid audio MIME types
-            if (validTypes.includes(file.type)) {
-                setError(""); // Clear error message if file type is valid
-                console.log("Selected file:", file);
-            } else {
-                setError("Please select compatible audio files (MP3, WAV, OGG).");
-            }
+      const file = event.target.files[0];
+      if (file) {
+        const validTypes = [
+          "audio/mp3",
+          "audio/wav",
+          "audio/ogg",
+          "audio/mpeg",
+        ]; // Add valid audio MIME types
+        if (validTypes.includes(file.type)) {
+          setError(""); // Clear error message if file type is valid
+          console.log("Selected file:", file);
+        } else {
+          setError("Please select compatible audio files (MP3, WAV, OGG).");
         }
+      }
     } else {
-        setError("No file selected.");
+      setError("No file selected.");
     }
   };
 
@@ -56,7 +61,7 @@ const Home = () => {
     >
       {/* Fixed Link when Scrolling */}
       <Affix
-        position={{ top: 20, left:'43% '}}
+        position={{ top: 20, left: "43% " }}
         style={{
           display: isScrolled ? "flex" : "none", // Change to flex when visible
           alignItems: "center",
@@ -67,7 +72,7 @@ const Home = () => {
         <a
           href="#"
           style={{
-            marginRight:"30px",
+            marginRight: "30px",
             color: "white",
             textDecoration: "none",
             fontSize: "20px",
@@ -87,7 +92,7 @@ const Home = () => {
             fontWeight: "600",
           }}
         >
-        Joiner
+          Joiner
         </a>
       </Affix>
 
@@ -100,16 +105,17 @@ const Home = () => {
           flexDirection: "column",
           alignItems: "center",
           textAlign: "center",
-          padding: "50px 0  130px 0 ", // Optional: remove padding
+          padding: "100px 0  130px 0 ", // Optional: remove padding
         }}
       >
         <Container
           style={{
+             padding: "30px 0 ",
             gap: "30px",
             display: "flex", // Use flexbox for layout
             alignItems: "center", // Center items vertically
             justifyContent: "space-between", // Adjust spacing between items
-            marginBottom: "20px", // Add margin if needed
+            marginBottom: "18px", // Add margin if needed
           }}
         >
           <Text
@@ -159,12 +165,11 @@ const Home = () => {
           Free editor to trim and cut any audio file online
         </Text>
         <button
-                  onClick={handleFileInputClick}
-
+          onClick={handleFileInputClick}
           style={{
             marginTop: "20px",
             width: "200px",
-            padding:"10px 0px",
+            padding: "10px 0px",
             borderRadius: "50px", // Rounded corners
             backgroundColor: "#17171e", // Background color
             border: "2px solid #665DC3", // Border color
@@ -174,7 +179,7 @@ const Home = () => {
         >
           Browse my files
         </button>
-        
+
         <FileInput
           accept="audio/*"
           type="file"
@@ -198,7 +203,7 @@ const Home = () => {
             marginBottom: "15px", // Bold text
           }}
           size="lg"
-          weight={700}
+          weight={400}
         >
           How to cut audio
         </Text>
@@ -258,7 +263,7 @@ const Home = () => {
             alignItems: "center", // Center the icon and text vertically
           }}
           size="lg"
-          weight={700}
+          weight={400}
         >
           <FontAwesomeIcon icon={faLock} style={{ marginRight: "10px" }} />{" "}
           {/* Lock icon */}

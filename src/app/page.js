@@ -139,7 +139,7 @@ const Home = () => {
             marginBottom: "15px", // Bold text
           }}
           size="lg"
-          weight={700}
+          weight={400}
         >
           Remove vocals from a song
         </Text>
