@@ -79,7 +79,9 @@ export const Sidebar = () => {
       </div>
 
       <div className={classes.footer}>
-        <Link className='link' href="/support">
+        <Link  href="/support" style={{
+          textDecoration:'auto'
+        }}>
           <div className={classes.link}>
             <FaQuestionCircle className={classes.linkIcon} />
             <span>Support</span>
