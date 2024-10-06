@@ -80,7 +80,7 @@ const Home = () => {
         </Text>
         <Text
           style={{
-            fontSize: "55px", // Custom font size
+            fontSize: "50px", // Custom font size
             fontWeight: 600,
             marginBottom: "10px", // Bold text
           }}
@@ -117,11 +117,10 @@ const Home = () => {
         </button>
       </Container>
 
-      {/* Add a thin line between the sections */}
       <div
         style={{
-          borderBottom: "1px solid #737373", // Thin purple line
-          width: "100%", // Full width
+          borderBottom: "1px solid #737373", 
+          width: "100%", 
           margin: "30px 0", 
         }}
       ></div>

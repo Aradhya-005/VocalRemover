@@ -34,6 +34,7 @@ export const CollapseDesktop = ({ children }) => {
         style: { borderBottom: "none", paddingLeft: "16px" },
       }}
       navbar={{
+        height:'100vh',
         width: 100,
         breakpoint: "sm",
         collapsed: { mobile: !mobileOpened, desktop: !desktopOpened },
