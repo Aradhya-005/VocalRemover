@@ -61,7 +61,7 @@ const Home = () => {
           flexDirection: "column",
           alignItems: "center",
           textAlign: "center",
-          padding: "50px 0  60px 0 ", // Optional: remove padding
+          padding: "40px 0  60px 0 ", // Optional: remove padding
         }}
       >
         <Text
