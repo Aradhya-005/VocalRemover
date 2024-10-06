@@ -13,29 +13,24 @@ import {
   FaQuestionCircle,
 } from "react-icons/fa"; // React Icons
 import { RiAlbumFill } from "react-icons/ri"; // Importing the new icon
-import { useMantineTheme } from "@mantine/core";
-
 import classes from "../styles/NavbarSimple.module.css";
 
 const data = [
-  { link: "/remover", label: "Remover", icon: FaEraser },
+  { link: "/", label: "Remover", icon: FaEraser },
   { link: "/cutter", label: "Cutter", icon: FaCut },
   { link: "/joiner", label: "Joiner", icon: FaMicroscope },
   { link: "/karaoke", label: "Karaoke", icon: RiAlbumFill },
-  { link: "/recorder", label: "Recorder", icon: FaMicrophone }, // Assuming same icon for different usage
-  { link: "/pitcher", label: "Pitcher", icon: FaMicroscope }, // Replace with appropriate icon
+  { link: "/recorder", label: "Recorder", icon: FaMicrophone },
+  { link: "/pitcher", label: "Pitcher", icon: FaMicroscope },
 ];
 
 export const Sidebar = () => {
   const [active, setActive] = useState("Cutter"); // Default active link
-  const theme = useMantineTheme();
-
   const links = data.map((item) => (
-    <Link href={item.link} key={item.label} styles = {{textDecoration:"none",}}>
+    <Link href={item.link} key={item.label} style={{ textDecoration: "none" }}>
       <div
         className={classes.link}
-        data-active={item?.label && active ? item.label === active : undefined}
-
+        data-active={item.label && active ? item.label === active : undefined}
         onClick={() => setActive(item.label)} // Set active link on click
       >
         <item.icon className={classes.linkIcon} stroke={1.5} />
@@ -50,21 +45,9 @@ export const Sidebar = () => {
         <ScrollArea
           w={100}
           h={400}
-          scrollbars="y"
           type="always"
           offsetScrollbars
-          styles={{
-            scrollbar: {
-              background: "#665dc3",
-              '&[data-orientation="vertical"] .mantine-ScrollArea-thumb': {
-                backgroundColor: theme.colors.blue[6], // Purple scrollbar color for vertical
-              },
-            },
-            corner: {
-              opacity: 1,
-              background: "#f0f0f0", // Neutral color for the corner
-            },
-          }}
+          scrollbarSize={8} // Use Mantine's prop to control scrollbar size
         >
           <Box w={100}>{links}</Box>
         </ScrollArea>
@@ -74,7 +57,7 @@ export const Sidebar = () => {
         <Link href="/support">
           <div className={classes.link}>
             <FaQuestionCircle className={classes.linkIcon} />
-            <span styles={{textDecoration:"none"}}>Support</span>
+            <span>Support</span>
           </div>
         </Link>
 
@@ -95,5 +78,3 @@ export const Sidebar = () => {
     </nav>
   );
 };
-
-// export default Sidebar;

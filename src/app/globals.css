@@ -3,4 +3,6 @@ body, html {
     padding: 0;
     overflow-x: hidden; /* Prevent horizontal overflow */
   }
-  
+::-webkit-scrollbar{
+  display: none;
+}

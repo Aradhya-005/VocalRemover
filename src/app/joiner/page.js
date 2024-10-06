@@ -1,50 +1,70 @@
-import React from 'react'
-import { Container, Title, Text, Button, Divider, Group, Anchor } from "@mantine/core";
+"use client";
 
-function page() {
+import ButtonComponent from "@/components/ButtonComponent";
+import { Container, Text, Button } from "@mantine/core";
+
+const Home = () => {
   return (
-    <Container size="lg" mt="lg">
-      <Title order={2}>Audio Joiner</Title>
-      <Text size="lg" mt="sm">
-        Free editor to join multiple audio files into one.
-      </Text>
+    <Container
+      mt="60px"
+      style={{
+        backgroundColor: "#17171e", // Set the background color
+        color: "white",
+        minHeight: "100vh",
+        display: "flex", // Enable flexbox
+        justifyContent: "center", // Center horizontally
+        alignItems: "center", // Center vertically
+        width: "100%", // Ensure full width
+        padding: "70px 0", // Optional: remove padding
+      }}
+    >
+      {/* First Container - Centered */}
+      <Container
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          textAlign: "center",
+          padding: "50px 0 130px 0", // Optional: remove padding
+        }}
+      >
+        <Text
+          style={{
+            fontSize: "55px", // Custom font size
+            fontWeight: 600,
+            marginBottom: "20px", // Bold text
+          }}
+        >
+          Audio Joiner
+        </Text>
+        <Text
+          style={{
+            fontSize: "25px", // Custom font size
+            fontWeight: 400,
+            marginBottom: "10px", // Bold text
+          }}
+        >
+          Join multiple audio tracks into one. Choose audio files you want to
+          merge
+        </Text>
 
-      <Divider my="md" />
-
-      <Text mt="md">
-        This app can be used to join multiple audio tracks into a single file. Simply upload the audio files you want to merge, and we will handle the rest.
-      </Text>
-
-      <Text mt="md">
-        It is fast and easy to use. You can save the joined audio file in any format (codec parameters are configured).
-      </Text>
-
-      <Text mt="md">
-        It works directly in the browser, no need to install any software, and it is available for mobile devices.
-      </Text>
-
-      <Text mt="md" weight={500}>
-        Privacy and Security Guaranteed
-      </Text>
-
-      <Text>
-        This is a serverless app. Your files do not leave your device.
-      </Text>
-
-      <Button variant="outline" mt="md">Join Your Audio</Button>
-
-      <Divider my="md" />
-
-      <Group mt="md" spacing="lg">
-        <Anchor href="#how-it-works" color="blue" weight={500}>
-          How it Works
-        </Anchor>
-        <Anchor href="/cutter" color="blue" weight={500}>
-          Audio Cutter
-        </Anchor>
-      </Group>
+        <button
+          style={{
+            marginTop: "20px",
+            width: "200px",
+            padding: "10px 0px",
+            borderRadius: "50px", // Rounded corners
+            backgroundColor: "#17171e", // Background color
+            border: "2px solid #665DC3", // Border color
+            color: "white", // Text color
+            fontSize: "18px", // Set font size
+          }}
+        >
+          Browse my files
+        </button>
+      </Container>
     </Container>
-  )
-}
+  );
+};
 
-export default page
+export default Home;

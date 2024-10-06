@@ -1,4 +1,4 @@
-import localFont from "next/font/local";
+import { Open_Sans } from '@next/font/google';
 import "./globals.css";
 import '@mantine/core/styles.css';
 
@@ -6,16 +6,11 @@ import React from 'react';
 import { ColorSchemeScript, MantineProvider } from '@mantine/core';
 import { CollapseDesktop } from "../components/CollapseDesktop";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
+const openSans = Open_Sans({
+  weight: ['400', '700'], // Specify the font weights you need
+  subsets: ['latin'], // Specify the subsets you need
 });
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+
 
 export const metadata = {
   title: "Create Next App",
@@ -28,7 +23,7 @@ export default function RootLayout({ children }) {
       <head>
         <ColorSchemeScript />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={openSans.className}>
         <MantineProvider withGlobalStyles withNormalizeCSS>
           <div style={{ backgroundColor: "#17171e", minHeight: "100vh" }}>
             <CollapseDesktop>

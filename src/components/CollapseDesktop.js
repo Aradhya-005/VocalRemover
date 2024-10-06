@@ -18,7 +18,7 @@ export const CollapseDesktop = ({ children }) => {
   const pathname = usePathname();
 
   const components = {
-    "/remover": <Remover />,
+    "/": <Remover />,
     "/cutter": <Cutter />,
     "/joiner": <Joiner />,
     "/karaoke": <Karaoke />,
@@ -34,7 +34,7 @@ export const CollapseDesktop = ({ children }) => {
         style: { borderBottom: "none", paddingLeft: "16px" },
       }}
       navbar={{
-        width: 250,
+        width: 100,
         breakpoint: "sm",
         collapsed: { mobile: !mobileOpened, desktop: !desktopOpened },
         style: { borderRight: "1px solid #eaeaea" },
