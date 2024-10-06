@@ -16,7 +16,7 @@ function page() {
       </Text>
 
       <Text mt="md">
-        It’s fast and easy to use. You can save the joined audio file in any format (codec parameters are configured).
+        It is fast and easy to use. You can save the joined audio file in any format (codec parameters are configured).
       </Text>
 
       <Text mt="md">

@@ -54,7 +54,7 @@ function page() {
 
       <Text mt="md">
         It works directly in the browser; no need to install any software, and
-        it's available for mobile devices.
+        it is available for mobile devices.
       </Text>
 
       <Text mt="md" weight={500}>
