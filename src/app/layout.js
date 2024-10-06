@@ -1,5 +1,10 @@
 import localFont from "next/font/local";
 import "./globals.css";
+import '@mantine/core/styles.css';
+
+import React from 'react';
+import { ColorSchemeScript, MantineProvider } from '@mantine/core';
+import { CollapseDesktop } from "../components/CollapseDesktop";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -20,8 +25,17 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <ColorSchemeScript />
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+        <MantineProvider withGlobalStyles withNormalizeCSS>
+          <div style={{ backgroundColor: "#17171e", minHeight: "100vh" }}>
+            <CollapseDesktop>
+              {children}
+            </CollapseDesktop>
+          </div>
+        </MantineProvider>
       </body>
     </html>
   );

@@ -1,95 +1,174 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import { Container, Text, Affix, Button, Box } from "@mantine/core";
 import Image from "next/image";
-import styles from "./page.module.css";
+import main from "../assets/main.png";
 
-export default function Home() {
+const Home = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  const handleScroll = () => {
+    setIsScrolled(window.scrollY > 100);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.js</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <Container
+      mt="60px"
+      style={{
+        backgroundColor: "#17171e", // Set the background color
+        color: "white",
+        minHeight: "100vh",
+        width: "100%", // Ensure full width
+        padding: "70px 0", // Optional: remove padding
+      }}
+    >
+      {/* Fixed Link when Scrolling */}
+      <Affix
+        position={{ top: 20, right: 20 }}
+        style={{
+          display: isScrolled ? "flex" : "none", // Change to flex when visible
+          alignItems: "center",
+          justifyContent: "center", // Center horizontally
+          height: "50px", // Set a height for vertical centering
+        }}
+      >
+        <a
+          href="#"
+          style={{
+            color: "white",
+            textDecoration: "none",
+            fontSize: "20px",
+            textTransform: "uppercase",
+            fontWeight: "600",
+          }}
+        >
+          How It Works
+        </a>
+      </Affix>
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+      {/* Link at the Start */}
+
+      {/* First Container - Centered */}
+      <Container
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          textAlign: "center",
+          padding: "60px 0", // Optional: remove padding
+        }}
+      >
+        <Text
+          style={{
+            alignItems: "center",
+            fontSize: "21px",
+            textTransform: "uppercase",
+            fontWeight: "600",
+          }}
+          size="xl"
+          weight={700}
+          mb="md"
+          id="how-it-works"
         >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          How It Works
+        </Text>
+        <Text
+          style={{
+            fontSize: "55px", // Custom font size
+            fontWeight: 600,
+            marginBottom: "10px", // Bold text
+          }}
         >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          Vocal Remover and Isolation
+        </Text>
+        <Text
+          style={{
+            fontSize: "25px", // Custom font size
+            fontWeight: 400,
+            marginBottom: "10px", // Bold text
+          }}
         >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+          Separate voice from music out of a song free with powerful AI
+          algorithms
+        </Text>
+
+        <Box style={{ padding: "50px", backgroundColor: "#17171e" }}>
+          <Image src={main} alt="hero-img" />
+        </Box>
+        <Button
+          style={{
+            marginTop: "20px",
+            width: "200px",
+            borderRadius: "50px", // Rounded corners
+            backgroundColor: "#17171e", // Background color
+            border: "2px solid #665DC3", // Border color
+            color: "white", // Text color
+            fontSize: "20px", // Set font size
+          }}
+        >
+          Browse my files
+        </Button>
+      </Container>
+
+      {/* Second Container - Left Aligned with Purple Left Border */}
+      <Container
+        style={{
+          width: "100%",
+          padding: "100px 0",
+        }}
+      >
+         <Text style={{
+            fontSize: "35px", // Custom font size
+            fontWeight: 600,
+            marginBottom: "15px", // Bold text
+          }} size="lg" weight={700}>
+          Remove vocals from a song
+        </Text>
+        <Container style={{
+          borderLeft: "2px solid #665DC3",
+          padding: "30px",
+          backgroundColor:'#1c1c26',
+          marginTop: "20px",
+        }}>
+       
+        <Text style={{
+            fontSize: "22px", // Custom font size
+            fontWeight: 400,
+            marginBottom: "15px", // Bold text
+          }}>
+          This free online application will help remove vocals from a song by
+          creating karaoke.
+        </Text>
+        <Text style={{
+            fontSize: "22px", // Custom font size
+            fontWeight: 400,
+            marginBottom: "15px", // Bold text
+          }}>
+          Once you choose a song, artificial intelligence will separate the
+          vocals from the instrumental ones. You will get two tracks - a karaoke
+          version of your song (no vocals) and an acapella version (isolated
+          vocals).
+        </Text>
+        <Text style={{
+            fontSize: "22px", // Custom font size
+            fontWeight: 400,
+            marginBottom: "10px", // Bold text
+          }}>
+          Despite the complexity and high cost of service, you can use it
+          absolutely free. Processing usually takes about 10 seconds.
+        </Text>
+        </Container>
+      </Container>
+    </Container>
   );
-}
+};
+
+export default Home;
