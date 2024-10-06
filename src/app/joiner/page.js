@@ -1,6 +1,5 @@
 "use client";
 
-import ButtonComponent from "@/components/ButtonComponent";
 import { Container, Text, Button } from "@mantine/core";
 
 const Home = () => {
@@ -8,14 +7,14 @@ const Home = () => {
     <Container
       mt="60px"
       style={{
-        backgroundColor: "#17171e", // Set the background color
+        backgroundColor: "#17171e", 
         color: "white",
         minHeight: "100vh",
-        display: "flex", // Enable flexbox
-        justifyContent: "center", // Center horizontally
-        alignItems: "center", // Center vertically
-        width: "100%", // Ensure full width
-        padding: "70px 0", // Optional: remove padding
+        display: "flex", 
+        justifyContent: "center", 
+        alignItems: "center", 
+        width: "100%", 
+        padding: "70px 0", 
       }}
     >
       {/* First Container - Centered */}
@@ -25,23 +24,23 @@ const Home = () => {
           flexDirection: "column",
           alignItems: "center",
           textAlign: "center",
-          padding: "50px 0 130px 0", // Optional: remove padding
+          padding: "50px 0 130px 0", 
         }}
       >
         <Text
           style={{
-            fontSize: "55px", // Custom font size
+            fontSize: "55px", 
             fontWeight: 600,
-            marginBottom: "20px", // Bold text
+            marginBottom: "20px", 
           }}
         >
           Audio Joiner
         </Text>
         <Text
           style={{
-            fontSize: "25px", // Custom font size
+            fontSize: "25px", 
             fontWeight: 400,
-            marginBottom: "10px", // Bold text
+            marginBottom: "10px", 
           }}
         >
           Join multiple audio tracks into one. Choose audio files you want to
@@ -53,11 +52,11 @@ const Home = () => {
             marginTop: "20px",
             width: "200px",
             padding: "10px 0px",
-            borderRadius: "50px", // Rounded corners
-            backgroundColor: "#17171e", // Background color
-            border: "2px solid #665DC3", // Border color
-            color: "white", // Text color
-            fontSize: "18px", // Set font size
+            borderRadius: "50px", 
+            backgroundColor: "#17171e", 
+            border: "2px solid #665DC3", 
+            color: "white", 
+            fontSize: "18px", 
           }}
         >
           Browse my files

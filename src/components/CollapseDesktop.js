@@ -3,9 +3,9 @@
 import { AppShell, Button } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { HiBars3CenterLeft } from "react-icons/hi2";
-import { Sidebar } from "./Sidebar"; 
-import { usePathname } from "next/navigation"; 
-import Remover from "../app/remover/page"; 
+import { Sidebar } from "./Sidebar";
+import { usePathname } from "next/navigation";
+import Remover from "../app/remover/page";
 import Cutter from "../app/cutter/page";
 import Joiner from "../app/joiner/page";
 import Karaoke from "../app/karaoke/page";
@@ -34,7 +34,7 @@ export const CollapseDesktop = ({ children }) => {
         style: { borderBottom: "none", paddingLeft: "16px" },
       }}
       navbar={{
-        height:'100vh',
+        height: "100vh",
         width: 100,
         breakpoint: "sm",
         collapsed: { mobile: !mobileOpened, desktop: !desktopOpened },
@@ -48,7 +48,7 @@ export const CollapseDesktop = ({ children }) => {
       >
         <Button
           onClick={toggleDesktop}
-          visibleFrom="sm" // Check if this is correctly applied
+          visibleFrom="sm"
           variant="subtle"
           style={{ padding: "2px", margin: "10px 5px" }}
         >
@@ -61,7 +61,7 @@ export const CollapseDesktop = ({ children }) => {
         </Button>
         <Button
           onClick={toggleMobile}
-          hiddenFrom="sm" // Check if this is correctly applied
+          hiddenFrom="sm"
           variant="subtle"
           style={{ padding: 0 }}
         >
@@ -78,7 +78,9 @@ export const CollapseDesktop = ({ children }) => {
         <Sidebar />
       </AppShell.Navbar>
 
-      <AppShell.Main style={{ padding: 0 }}> {/* Ensure no padding */}
+      <AppShell.Main style={{ padding: 0 }}>
+        {" "}
+        {/* Ensure no padding */}
         {children || components[pathname] || <div>No content available</div>}
         {/* Fallback content for debugging */}
       </AppShell.Main>

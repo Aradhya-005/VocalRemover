@@ -9,7 +9,7 @@ import { faLock } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 const Home = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [error, setError] = useState(""); // State for error message
+  const [error, setError] = useState("");
   const fileInputRef = useRef(null);
   const handleScroll = () => {
     setIsScrolled(window.scrollY > 100);
@@ -26,7 +26,6 @@ const Home = () => {
   };
 
   const handleFileChange = (event) => {
-    // Check if event and event.target are defined
     if (event && event.target && event.target.files) {
       const file = event.target.files[0];
       if (file) {
@@ -35,7 +34,7 @@ const Home = () => {
           "audio/wav",
           "audio/ogg",
           "audio/mpeg",
-        ]; // Add valid audio MIME types
+        ];
         if (validTypes.includes(file.type)) {
           setError(""); // Clear error message if file type is valid
           console.log("Selected file:", file);
@@ -52,21 +51,21 @@ const Home = () => {
     <Container
       mt="60px"
       style={{
-        backgroundColor: "#17171e", // Set the background color
+        backgroundColor: "#17171e",
         color: "white",
         minHeight: "100vh",
-        width: "100%", // Ensure full width
-        padding: "70px 0", // Optional: remove padding
+        width: "100%",
+        padding: "70px 0",
       }}
     >
       {/* Fixed Link when Scrolling */}
       <Affix
         position={{ top: 20, left: "43% " }}
         style={{
-          display: isScrolled ? "flex" : "none", // Change to flex when visible
+          display: isScrolled ? "flex" : "none",
           alignItems: "center",
-          justifyContent: "center", // Center horizontally
-          height: "50px", // Set a height for vertical centering
+          justifyContent: "center",
+          height: "50px",
         }}
       >
         <a
@@ -96,8 +95,6 @@ const Home = () => {
         </a>
       </Affix>
 
-      {/* Link at the Start */}
-
       {/* First Container - Centered */}
       <Container
         style={{
@@ -110,12 +107,12 @@ const Home = () => {
       >
         <Container
           style={{
-             padding: "30px 0 ",
+            padding: "30px 0 ",
             gap: "30px",
-            display: "flex", // Use flexbox for layout
-            alignItems: "center", // Center items vertically
-            justifyContent: "space-between", // Adjust spacing between items
-            marginBottom: "18px", // Add margin if needed
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            marginBottom: "18px",
           }}
         >
           <Text
@@ -141,25 +138,25 @@ const Home = () => {
             }}
             size="xl"
             weight={700}
-            id="joiner" // Change ID to be unique
+            id="joiner"
           >
             Joiner
           </Link>
         </Container>
         <Text
           style={{
-            fontSize: "55px", // Custom font size
+            fontSize: "55px",
             fontWeight: 600,
-            marginBottom: "20px", // Bold text
+            marginBottom: "20px",
           }}
         >
           Audio Cutter
         </Text>
         <Text
           style={{
-            fontSize: "25px", // Custom font size
+            fontSize: "25px",
             fontWeight: 400,
-            marginBottom: "10px", // Bold text
+            marginBottom: "10px",
           }}
         >
           Free editor to trim and cut any audio file online
@@ -170,11 +167,11 @@ const Home = () => {
             marginTop: "20px",
             width: "200px",
             padding: "10px 0px",
-            borderRadius: "50px", // Rounded corners
-            backgroundColor: "#17171e", // Background color
-            border: "2px solid #665DC3", // Border color
-            color: "white", // Text color
-            fontSize: "18px", // Set font size
+            borderRadius: "50px",
+            backgroundColor: "#17171e",
+            border: "2px solid #665DC3",
+            color: "white",
+            fontSize: "18px",
           }}
         >
           Browse my files
@@ -184,7 +181,7 @@ const Home = () => {
           accept="audio/*"
           type="file"
           ref={fileInputRef}
-          onChange={handleFileChange} // Handle file selection
+          onChange={handleFileChange}
           style={{ display: "none" }}
         />
       </Container>
@@ -198,9 +195,9 @@ const Home = () => {
       >
         <Text
           style={{
-            fontSize: "35px", // Custom font size
+            fontSize: "35px",
             fontWeight: 600,
-            marginBottom: "15px", // Bold text
+            marginBottom: "15px",
           }}
           size="lg"
           weight={400}
@@ -217,9 +214,9 @@ const Home = () => {
         >
           <Text
             style={{
-              fontSize: "22px", // Custom font size
+              fontSize: "22px",
               fontWeight: 400,
-              marginBottom: "15px", // Bold text
+              marginBottom: "15px",
             }}
           >
             This app can be used to trim and/or cut audio tracks, remove an
@@ -228,9 +225,9 @@ const Home = () => {
           </Text>
           <Text
             style={{
-              fontSize: "22px", // Custom font size
+              fontSize: "22px",
               fontWeight: 400,
-              marginBottom: "15px", // Bold text
+              marginBottom: "15px",
             }}
           >
             It fast and easy to use. You can save the audio file in any format
@@ -238,9 +235,9 @@ const Home = () => {
           </Text>
           <Text
             style={{
-              fontSize: "22px", // Custom font size
+              fontSize: "22px",
               fontWeight: 400,
-              marginBottom: "10px", // Bold text
+              marginBottom: "10px",
             }}
           >
             It works directly in the browser, no needs to install any software,
@@ -256,11 +253,11 @@ const Home = () => {
       >
         <Text
           style={{
-            fontSize: "30px", // Custom font size
+            fontSize: "30px", 
             fontWeight: 600,
-            marginBottom: "15px", // Bold text
-            display: "flex", // Flexbox for alignment
-            alignItems: "center", // Center the icon and text vertically
+            marginBottom: "15px", 
+            display: "flex", 
+            alignItems: "center", 
           }}
           size="lg"
           weight={400}
@@ -279,9 +276,9 @@ const Home = () => {
         >
           <Text
             style={{
-              fontSize: "22px", // Custom font size
+              fontSize: "22px", 
               fontWeight: 400,
-              marginBottom: "15px", // Bold text
+              marginBottom: "15px", 
             }}
           >
             This is serverless app. Your files does not leave your device

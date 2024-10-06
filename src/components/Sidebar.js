@@ -4,7 +4,7 @@ import { useState } from "react";
 import { ScrollArea, Box } from "@mantine/core";
 import flag from '../assets/flag.png';
 import Image from "next/image";
-import Link from "next/link"; // Importing Link
+import Link from "next/link"; 
 import {
   FaCut,
   FaEraser,
@@ -25,7 +25,7 @@ const data = [
 ];
 
 export const Sidebar = () => {
-  const [active, setActive] = useState("/cutter"); // Set the initial active link based on the route
+  const [active, setActive] = useState("/"); 
 
   const links = data.map((item) => (
     <Link href={item.link} key={item.label} style={{ textDecoration: "none" }}>
@@ -47,9 +47,9 @@ export const Sidebar = () => {
   w={100}
   h={430}
   style={{
-    overflowY: 'scroll', // Enable vertical scrolling
-    scrollbarWidth: 'thin', // For Firefox browsers (thin scrollbar)
-    scrollbarColor: ' #665DC3 #1c1c26', // Firefox (thumb color, track color)
+    overflowY: 'scroll', 
+    scrollbarWidth: 'thin', 
+    scrollbarColor: ' #665DC3 #1c1c26',
   }}
 >
   <style jsx>{`
@@ -72,8 +72,8 @@ export const Sidebar = () => {
     }
   `}</style>
 
-  {/* Your content inside the scrolling box */}
-  {links} {/* Your links array */}
+  
+  {links} 
 </Box>
 
       </div>
