@@ -56,7 +56,7 @@ const Home = () => {
     >
       {/* Fixed Link when Scrolling */}
       <Affix
-        position={{ top: 20, right: 20 }}
+        position={{ top: 20, left:'43% '}}
         style={{
           display: isScrolled ? "flex" : "none", // Change to flex when visible
           alignItems: "center",
@@ -67,6 +67,7 @@ const Home = () => {
         <a
           href="#"
           style={{
+            marginRight:"30px",
             color: "white",
             textDecoration: "none",
             fontSize: "20px",
@@ -75,6 +76,18 @@ const Home = () => {
           }}
         >
           How It Works
+        </a>
+        <a
+          href="#"
+          style={{
+            color: "white",
+            textDecoration: "none",
+            fontSize: "20px",
+            textTransform: "uppercase",
+            fontWeight: "600",
+          }}
+        >
+        Joiner
         </a>
       </Affix>
 
@@ -101,7 +114,7 @@ const Home = () => {
         >
           <Text
             style={{
-              fontSize: "21px",
+              fontSize: "20px",
               textTransform: "uppercase",
               fontWeight: "600",
             }}
@@ -116,7 +129,7 @@ const Home = () => {
             style={{
               color: "white",
               textDecoration: "none",
-              fontSize: "21px",
+              fontSize: "20px",
               textTransform: "uppercase",
               fontWeight: "600",
             }}

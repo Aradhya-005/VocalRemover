@@ -32,7 +32,7 @@ const Home = () => {
     >
       {/* Fixed Link when Scrolling */}
       <Affix
-        position={{ top: 20, right: 20 }}
+        position={{ top: 20, left:"45.5%" }}
         style={{
           display: isScrolled ? "flex" : "none", // Change to flex when visible
           alignItems: "center",
@@ -67,7 +67,7 @@ const Home = () => {
         <Text
           style={{
             alignItems: "center",
-            fontSize: "21px",
+            fontSize: "20px",
             textTransform: "uppercase",
             fontWeight: "600",
           }}
